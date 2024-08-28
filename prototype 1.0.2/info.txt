@@ -1,0 +1,7 @@
+
+========= INFO =========
+
+ * Created a text outputting system
+   * The problem is that the thread does not close
+
+========================

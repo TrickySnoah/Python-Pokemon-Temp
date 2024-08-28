@@ -1,0 +1,7 @@
+
+========= INFO =========
+
+ * Introduced threading
+ * Worked with class and subclasses
+
+========================
