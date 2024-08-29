@@ -14,7 +14,7 @@ class Dialogue(Thread):
         for i in range(50):
             print(i)
         
-        self.event.set() # this kills the thread. You have to initialize a new thread now.
+        self.event.set()
         
         print("Did the thread end?")
         

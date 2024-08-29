@@ -1,0 +1,10 @@
+
+========= INFO =========
+
+ * Worked on implementing pygame
+ * Implemented scaling (for sprite sizes and window size)
+ * Implemented buttons
+
+ * Returning a value with threads is not working, so the next prototype will use a subclass to do so
+
+========================

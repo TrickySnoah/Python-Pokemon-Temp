@@ -1,10 +1,9 @@
 
 ========= INFO =========
 
- * Worked on implementing pygame
- * Implemented scaling (for sprite sizes and window size)
- * Implemented buttons
+ * Used a sub class to kill the thread within itself using self.event.set() 
+ * Found a way to find out whether the thread is running or not by using threadName.is_alive()
 
- * Returning a value with threads is not working, so the next prototype will use a subclass to do so
+ * Will implement this code into the main code.
 
 ========================
