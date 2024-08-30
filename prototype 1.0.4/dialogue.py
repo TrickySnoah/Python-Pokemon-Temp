@@ -1,45 +1,50 @@
+from threading import Thread
 from time import sleep as s
 
-def systemDialogue(message):
-    pass
-
-def characterDialogue(message, voiceType):
+# create the sub class
+class Dialogue(Thread):
     
-    # split the words in the message
-    words = message.split()
+    # initialization
+    def __init__(self, event, message, dialogueType, voiceType, *args, **kwargs):
+        super().__init__(*args, **kwargs) # what arguments should this be taking?
+        self.event = event
+        self.message = message
+        self.dialogueType = dialogueType
+        self.voiceType = voiceType
+        #self.threadOneRunning = False # is this needed?
     
-    # loop for every word in the words list
-    for word in words:
+    def __systemDialogue(self):
+        pass
+    
+    def __characterDialogue(self):
+        # split the words in the message
+        words = self.message.split()
         
-        # loop for every letter in each word
-        for letter in word:
+        # loop for every word in the words list
+        for word in words:
             
-            # print the letter and wait a little
-            print(letter, end="")
-            s(.03)
+            # loop for every letter in each word
+            for letter in word:
                 
-        # at the end of each word, add a space
-        print(" ", end="")
-        
-    # return a boolean value to stop the thread
-    return True
-    
-def mainDialogue(threadOneRunning, message, dialogueType, voiceType=None):
-    
-    print("\n\nStarting Thread One")
-    s(.1)
-    
-    stopThread = False
-    
-    while not stopThread:
-        
-        if dialogueType == "system":
-            systemDialgoue(message)
+                # print the letter and wait a little
+                print(letter, end="")
+                s(.03)
+                    
+            # at the end of each word, add a space
+            print(" ", end="")
             
-        elif dialogueType == "character":
-            stopThread = characterDialogue(message, voiceType)
+        # output a newline
+        print()
     
-    threadOneRunning = False # this tells the main file that the thread is done
-    
-    return threadOneRunning
-    
+    def run(self) -> None: # Thread.start() starts this
+        
+        # check to see which function is needed
+        if self.dialogueType == "system":
+            self.__systemDialogue()
+        
+        elif self.dialogueType == "character":
+            self.__characterDialogue()
+        
+        #self.event.set() # what does this do?
+        
+        #print("Thread ending.") # this tells the user that the thread is dead

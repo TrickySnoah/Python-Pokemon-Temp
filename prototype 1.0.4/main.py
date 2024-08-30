@@ -1,5 +1,4 @@
-from time import sleep as s
-from threading import Thread as t
+from threading import Thread, Event
 
 import pygame
 import pyautogui
@@ -28,7 +27,7 @@ spacePressed = False
 
 # initialize the boolean variables for the threads
 threadOneRunning = False
-
+ 
 while not quitGame:
     
     # check to see whether the user pressed the X to close the window or not
@@ -45,19 +44,20 @@ while not quitGame:
     # the there is a dialogue type is to organize the type of text that will outputted, such as
     # character dialogue (regular, shouting, whispering), pokemon atacks, system messages, etc.
 
-    # initialize the threads
-    threadOne = t(target=dialogue.mainDialogue, args=(lambda : threadOneRunning, message, dialogueType, voiceType,))
-    
+    # update the boolean variables for the threads
+    try: threadOneRunning = dialogueThread.is_alive()
+    except: pass
+
+    # initialize the thread IF it's not running
+    if not threadOneRunning:
+        event = Event()
+        dialogueThread = dialogue.Dialogue(event, message, dialogueType, voiceType)
+
     # start the thread if the user presses the spacebar
     if pygame.key.get_pressed()[pygame.K_SPACE]:
-        if not spacePressed and not threadOneRunning:
-            threadOneRunning = True
-            threadOne.start()
-            threadOneRunning = threadOne.join()
-        spacePressed = True
-    else:
-        spacePressed = False
-    print(f"running: {threadOneRunning} pressed: {spacePressed}")
+        if not threadOneRunning: # ensure that spacebar isn't being held. the spacebar might actually not need to be checked
+            dialogueThread.start()
+
     # update the screen and clock
     pygame.display.flip()
     clock.tick(FPS)

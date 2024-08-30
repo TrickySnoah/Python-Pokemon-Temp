@@ -10,13 +10,10 @@ class Dialogue(Thread):
         self.event = event
         self.threadOneRunning = False
         
-    def run(self) -> None: # Thread.start() starts this?
+    def run(self) -> None: # Thread.start() starts this
         for i in range(50):
             print(i)
         
-        self.event.set() # this kills the thread. You have to initialize a new thread now.
+        #self.event.set() # what does this do?
         
         print("Did the thread end?")
-        
-    
-    
