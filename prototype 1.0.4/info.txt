@@ -1,10 +1,8 @@
 
 ========= INFO =========
 
- * Worked on implementing pygame
- * Implemented scaling (for sprite sizes and window size)
- * Implemented buttons
+ * Used sub class to create working thread for dialogue
 
- * Returning a value with threads is not working, so the next prototype will use a subclass to do so
+ * Maybe make one general text output system, and make the speed and color passable variables. make's the code more reusable.
 
 ========================
