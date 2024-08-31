@@ -1,0 +1,12 @@
+
+========= INFO =========
+
+ * Allows program to terminate mid thread execution
+ * Implemented a character limit when outputting text
+ * Implemented a line output limit when outputting text
+
+ * Implement a way to fast forward the text when pressing space in the middle of outputting
+ * Implement a name when provided one, and output it on the first line of text
+ * Create a text break when a period is detected
+
+========================

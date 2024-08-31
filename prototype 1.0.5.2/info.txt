@@ -1,0 +1,11 @@
+
+========= INFO =========
+
+ * Outputs the name when detected
+ * Created a settings file for default variables, such as text speed
+ * Implemented a way to fast forward text when holding down the spacebar
+
+ * Create a text break when a period is detected
+ * Make the text slow down when ellipses are detected
+
+========================

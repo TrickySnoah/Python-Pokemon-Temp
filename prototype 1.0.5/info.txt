@@ -1,0 +1,8 @@
+
+========= INFO =========
+
+ * Modified dialogue.py. It's now more reusable and more modifiable with variables
+
+ * When characters speak a lot, break up their text and make sure that the name of the character appears only once
+
+========================
