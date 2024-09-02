@@ -1,0 +1,19 @@
+
+========= INFO =========
+
+ * Ensures that the spacebar can't be held down for text to appear constantly
+ * Implemented a text break when a period is detected
+ * Slows down text when ellipses are detected
+ * Changed the default text output speed for ellipses
+
+ * Create an in game menu button and work on it. It should include the options: POEKMON,
+   BAG, SAVE, POKEDEX, SUCCESS, and OPTIONS. It will be displayed and organized as such:
+   [POEKMON , POKEDEX,
+    BAG , SUCCESS,
+    SAVE , OPTIONS]
+   and numbered as such:
+   [1 , 2
+    3 , 4
+    5 , 6]
+
+========================
