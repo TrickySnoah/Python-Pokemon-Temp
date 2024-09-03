@@ -3,9 +3,7 @@ from threading import Thread
 import pygame
 import pyautogui
 import os
-
 import dialogue
-import inGameMenu as IGM
 
 # set the window to a certain spot on the screen
 x_specspot = 0 #Variable used for a specific spot
@@ -26,7 +24,6 @@ quitGame = False
 
 # initialize the boolean variables for the threads
 dialogueThreadRunning = False
-inGameMenuThreadRunning = False
  
 while not quitGame:
     
@@ -37,7 +34,6 @@ while not quitGame:
             
             try:
                 dialogueThread.quit = True
-                
                 
             except:
                 pass
