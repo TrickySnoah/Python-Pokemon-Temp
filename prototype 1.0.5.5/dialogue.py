@@ -80,6 +80,9 @@ class Dialogue(Thread):
             # check to see if two lines have been outputted already. If so, wait for the user to press spacebar again
             if self.__lineCount == MAX_LINE_OUTPUT:
                 
+                # check for remination
+                if self.quit: break
+                
                 # ensure that the spacebar isn't being held
                 while pygame.key.get_pressed()[pygame.K_SPACE]:
                     

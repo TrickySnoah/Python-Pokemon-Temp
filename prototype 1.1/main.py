@@ -3,7 +3,6 @@ from threading import Thread
 import pygame
 import pyautogui
 import os
-
 import dialogue
 import inGameMenu as IGM
 
@@ -37,7 +36,7 @@ while not quitGame:
             
             try:
                 dialogueThread.quit = True
-                
+                inGameMenuThread.quit = True
                 
             except:
                 pass
@@ -51,17 +50,28 @@ while not quitGame:
     # character dialogue (regular, shouting, whispering), pokemon atacks, system messages, etc.
 
     # update the boolean variables for the threads
-    try: dialogueThreadRunning = dialogueThread.is_alive()
-    except: pass
+    try:
+        dialogueThreadRunning = dialogueThread.is_alive()
+        inGameMenuThreadRunning = inGameMenuThread.is_alive()
+    except:
+        pass
 
-    # initialize the thread IF it's not running
+    # initialize the threads IF they not running
     if not dialogueThreadRunning:
         dialogueThread = dialogue.Dialogue(message, character=character)
+        
+    if not inGameMenuThreadRunning:
+        inGameMenuThread = IGM.InGameMenu()
 
-    # start the thread if the user presses the spacebar
+    # start the dialogue thread if the user presses the spacebar
     if pygame.key.get_pressed()[pygame.K_SPACE]:
         if not dialogueThreadRunning: # make sure to not execute multiple times if the thread is running already
             dialogueThread.start()
+            
+    # start the in game menu thread if the user presses tab
+    if pygame.key.get_pressed()[pygame.K_TAB]:
+        if not inGameMenuThreadRunning:
+            inGameMenuThread.start()
 
     # update the screen and clock
     pygame.display.flip()
