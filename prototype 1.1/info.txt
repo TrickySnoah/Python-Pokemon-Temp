@@ -1,10 +1,10 @@
 
 ========= INFO =========
 
- * Removed Event from threading
- * Made some modifications to make the code safer
+ * Created the inGameMenu.py file
+ * Created a button, TAB, to open the in game menu
+ * Created a system to take in WASD inputs after the menu is opened
 
- * Create an in game menu button and work on it. It should include the options: POEKMON,
-   BAG, SAVE, POKEDEX, SUCCESS, and OPTIONS
+ * Create the math for the buttons
 
 ========================
