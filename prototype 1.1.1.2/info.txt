@@ -1,0 +1,11 @@
+
+========= INFO =========
+
+ * Replaced the useage of pygame's keyboard in ingameMenu.py and instead used
+   pynput's keyboard
+
+ * Change in plans ... work on the function of the options in inGameMenu.py later on
+   once more has been completed
+ * Create a title screen before being able to enter the game
+
+========================

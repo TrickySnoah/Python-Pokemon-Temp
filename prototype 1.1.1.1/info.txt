@@ -1,12 +1,13 @@
 
 ========= INFO =========
 
- * Created the math for the WASD buttons
- * Created callable functions based on the value of __selection
+ * Found a way to use pynut to take keyboard inputs in a much better way than
+   how pygame takes in keyboard inputs
+ * Provided an example of how to implement the usage of pynput
+
+ * Replace the necessary pygame keyboard inputs with pynut keyboard inputs
 
  * Start making the functions do things. pokemonList, pokedex, bag, success, and save can all be
    worked on later on once the pokemon, items, and more have all been created
-
- * Eventually change the way the program takes in key inputs
 
 ========================
